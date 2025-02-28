@@ -1,0 +1,33 @@
+prompt:
+
+1) Contexto: esse projeto é uma azure function, que é disparada quando um arquivo é criado em um diretório específico na storage account do azure. Quando o arquivo é criado, a função compacta o arquivo e grava o arquivo compactado em uma biblioteca do sharepoint. Vou te fornecer o código da função abaixo e quero que crie uma documentação da função. 
+
+2) Poderia gerar a documentação em um formato markdown e disponibilizar o arquivo para download?
+
+adicione a informação que ela foi desenvolvida em python 3.10 usando azure functions modelo V2. adicione também, na seção variáveis de ambiente todas as variáveis abaixo: 
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "functionsstorage_STORAGE": "DefaultEndpointsProtocol=https;AccountName=functionsstorage;AccountKey= ## your key ##;EndpointSuffix=core.windows.net",
+    "TENANT_ID": "your tenant id here",
+    "CLIENT_ID": "your client id app here",
+    "CLIENT_SECRET": "your client app secret here",
+    "SITE_ID": "your site id here",
+    "DOCUMENT_LIBRARY": "document library id here",
+    "AUTHORITY_URL": "https://login.microsoftonline.com/your domain here",
+    "SCOPE": "https://graph.microsoft.com/.default"
+
+  }
+}
+
+4) Adicione uma seção de pré-requisitos com os seguintes itens:
+Azure Subscription
+Permissões de administrador global no Tenant do Azure
+App registration
+Sharepoint on line
+adicione também uma sessão de referência, com os seguintes links:
+https://learn.microsoft.com/en-us/azure/azure-functions/functions-event-grid-blob-trigger?pivots=programming-language-python
+https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate
+https://learn.microsoft.com/pt-br/sharepoint/dev/sp-add-ins-modernize/understanding-rsc-for-msgraph-and-sharepoint-online
