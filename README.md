@@ -135,6 +135,25 @@ headers = {
 with open(zip_file_path, "rb") as zip_file:
     response = requests.put(upload_url, headers=headers, data=zip_file)
 ```
+Observação: Para conseguir o id do site e o id da biblioteca do Sharepoint, inclua os códigos abaixo na sua função. Descomente e execute a sua função conforme a necessidade. As referências, abaixo nessa documentação, possui o link para a documentação, onde são descritas outras maneiras de conseguir o siteid.
+
+```python
+# response1 = requests.get(url_get, headers=headers)
+        # data = json.loads(response1.text)
+        # logging.info(data)
+
+        # permissions_url = f"https://graph.microsoft.com/v1.0/sites/{site_id}/permissions"
+        # response2 = requests.get(permissions_url, headers={"Authorization": f"Bearer {access_token}"})
+        # logging.info(response2.json())
+
+        # list_url = f"https://graph.microsoft.com/v1.0/sites/{site_id}/drive/root:/{doc_library}:/children"
+        # response3 = requests.get(list_url, headers={"Authorization": f"Bearer {access_token}"})
+        # print(f'resposta3: {response3.json()}')
+
+        # list_drives_url = f"https://graph.microsoft.com/v1.0/sites/{site_id}/drives"
+        # response4 = requests.get(list_drives_url, headers={"Authorization": f"Bearer {access_token}"})
+        # print(response4.json())
+```
 
 Se a resposta for **200** ou **201**, significa que o envio foi bem-sucedido. Caso contrário, um erro é registrado.  
 
@@ -207,7 +226,8 @@ Para mais informações sobre as tecnologias utilizadas, consulte os links abaix
 - [Azure Functions - Blob Trigger](https://learn.microsoft.com/en-us/azure/azure-functions/functions-event-grid-blob-trigger?pivots=programming-language-python)
 - [Azure AD - Registro de Aplicativo](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate)
 - [SharePoint Online - Uso com Microsoft Graph](https://learn.microsoft.com/pt-br/sharepoint/dev/sp-add-ins-modernize/understanding-rsc-for-msgraph-and-sharepoint-online)
+- [SharePoint Online - Obter o SiteID ](https://learn.microsoft.com/pt-br/graph/api/site-get?view=graph-rest-1.0&tabs=http)
 
 
 ## 📌 **Conclusão**  
-Esta **Azure Function** automatiza o processo de **compressão e envio** de arquivos para o SharePoint de forma eficiente, garantindo que os arquivos sejam armazenados corretamente e que os recursos temporários sejam liberados após o uso. 🚀
+Esta **Azure Function** automatiza o processo de **compressão e envio** de arquivos para o SharePoint, garantindo que os arquivos sejam armazenados corretamente e que os recursos temporários sejam liberados após o uso. 🚀
