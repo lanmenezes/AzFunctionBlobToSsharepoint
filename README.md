@@ -1,5 +1,10 @@
 # 📄 Documentação da Azure Function  
 
+<div style="text-align: center;">
+  <img src="./docs/assets/image/azfunc.png" alt="Azure functions">
+</div>
+
+
 ## 📌 Visão Geral  
 
 Esta **Azure Function** foi desenvolvida em **Python 3.10** usando o modelo **Azure Functions V2**.  
